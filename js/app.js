@@ -51,12 +51,11 @@ const toggleFooter = () => {
   }
 }
 
-alert("Fullscreen Denied", JSON.stringify(event, null, 4));
 
 footer.addEventListener(
   "touchstart",
   function (e) {
-    alert("touchstart");
+    footer.innerHTML = "Touch Start"
     toggleFullScreen();
     toggleFooter();
   },
@@ -64,5 +63,5 @@ footer.addEventListener(
 );
 
 documnent.documentElement.onfullscreenerror = function(event){
-  alert("Fullscreen Denied", JSON.stringify(event, null, 4));
+  footer.innerHTML = "Fullscreen Denied";
 }
