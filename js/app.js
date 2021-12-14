@@ -34,11 +34,11 @@ setInterval(function () {
 
 
 const toggleFullScreen = () => {
-  if (!document.fullscreenElement) {
-    document.documentElement.requestFullscreen();
+  if (!document.webkitIsFullScreen) {
+    document.documentElement.webkitRequestFullScreen();
   } else {
     if (document.exitFullscreen) {
-      document.exitFullscreen();
+      document.webkitCancelFullScreen();
     }
   }
 }
