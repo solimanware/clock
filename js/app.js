@@ -51,7 +51,7 @@ const toggleFooter = () => {
   }
 }
 
-document.addEventListener(
+footer.addEventListener(
   "click",
   function (e) {
     toggleFullScreen();
