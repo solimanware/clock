@@ -52,7 +52,7 @@ const toggleFooter = () => {
 }
 
 document.addEventListener(
-  "keydown",
+  "click",
   function (e) {
     toggleFullScreen();
     toggleFooter();
