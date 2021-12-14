@@ -26,12 +26,11 @@ const getClockTime = () => {
   }
   var timeString = hour + ":" + minute + ":" + second + " " + ap;
   return timeString;
-}
+};
 
 setInterval(function () {
   clock.innerHTML = getClockTime();
 }, 1000);
-
 
 const toggleFullScreen = () => {
   if (!document.webkitIsFullScreen) {
@@ -41,7 +40,7 @@ const toggleFullScreen = () => {
       document.webkitCancelFullScreen();
     }
   }
-}
+};
 
 const toggleFooter = () => {
   if (footer.style.display === "none") {
@@ -49,19 +48,9 @@ const toggleFooter = () => {
   } else {
     footer.style.display = "none";
   }
-}
+};
 
-
-footer.addEventListener(
-  "keydown",
-  function (e) {
-    footer.innerHTML = e.keyCode
-    toggleFullScreen();
-    toggleFooter();
-  },
-  false
-);
-
-documnent.documentElement.onfullscreenerror = function(event){
-  footer.innerHTML = "Fullscreen Denied";
-}
+setTimeout(() => {
+  toggleFullScreen();
+  toggleFooter();
+}, 5000);
