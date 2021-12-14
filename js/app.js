@@ -32,15 +32,20 @@ setInterval(function () {
   clock.innerHTML = getClockTime();
 }, 1000);
 
-const toggleFullScreen = () => {
-  if (!document.webkitIsFullScreen) {
-    document.body.webkitRequestFullScreen();
-  } else {
-    if (document.exitFullscreen) {
-      document.webkitCancelFullScreen();
-    }
+function toggleFullScreen() {
+  var doc = window.document;
+  var docEl = doc.documentElement;
+
+  var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+  var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+  if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+    requestFullScreen.call(docEl);
   }
-};
+  else {
+    cancelFullScreen.call(doc);
+  }
+}
 
 const toggleFooter = () => {
   if (footer.style.display === "none") {
