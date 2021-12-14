@@ -50,7 +50,5 @@ const toggleFooter = () => {
   }
 };
 
-setTimeout(() => {
-  toggleFullScreen();
-  toggleFooter();
-}, 5000);
+//click anywhere to full screen
+document.addEventListener("click", toggleFullScreen);
