@@ -59,3 +59,7 @@ document.addEventListener(
   },
   false
 );
+
+documnent.documentElement.onfullscreenerror = function(event){
+  alert("Fullscreen Denied", JSON.stringify(event, null, 4));
+}
