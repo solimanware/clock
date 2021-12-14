@@ -35,7 +35,7 @@ setInterval(function () {
 
 const toggleFullScreen = () => {
   if (!document.webkitIsFullScreen) {
-    document.documentElement.webkitRequestFullScreen();
+    document.body.webkitRequestFullScreen();
   } else {
     if (document.exitFullscreen) {
       document.webkitCancelFullScreen();
