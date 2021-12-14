@@ -53,9 +53,9 @@ const toggleFooter = () => {
 
 
 footer.addEventListener(
-  "touchstart",
+  "keydown",
   function (e) {
-    footer.innerHTML = "Touch Start"
+    footer.innerHTML = e.keyCode
     toggleFullScreen();
     toggleFooter();
   },
