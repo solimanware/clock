@@ -52,7 +52,7 @@ const toggleFooter = () => {
 }
 
 footer.addEventListener(
-  "click",
+  "touchstart",
   function (e) {
     toggleFullScreen();
     toggleFooter();
